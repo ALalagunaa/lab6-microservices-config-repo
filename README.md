@@ -18,9 +18,10 @@ El log de la terminal del servicio accounts es el siguiente:
 ![Eureka screenshot](./img/tarea1.png)
 
 ### 3. Update the configuration repository so that the `accounts` service uses now the port 3333. **Link to the commit**.
-
+https://github.com/ALalagunaa/lab6-microservices-config-repo/commit/2140df7abc5be88532566fecaf7adb8afe624332
 
 ### 4. Run a second instance of the `accounts` service using the new configuration (a fourth terminals). What happens? **Explain and Eureka dashboard screenshot**
+
 
 ### 5. What happens when you kill the service `accounts (2222)` and do requests to `web`?. **Explain and screenshots, including at least one Eureka dashboard screenshot** 
 
