@@ -5,6 +5,14 @@ https://github.com/ALalagunaa/lab6-microservices-config-repo.git
 
 ### 1. Two services `accounts (2222)` and `web` are running and registered (two terminals). **2 Log screenshot**.
 Para que funcionen ambos servicios, con el accounts en el 2222 hay que modificar ambos ficheros de configuración. En el **accounts-service.yml** modificamos el *server port* para que tenga el 2222. Tanto en el **accounts-service.yml** como en el **web-service.yml** añadimos las siguientes líneas:
+```yaml
+cloud:
+    config:
+      uri: http://localhost:8888
+      name: accounts-service
+      profile: default
+```
+Para el fichero **web-service.yml** el *name* será *web-service*
 
 El log de la terminal del servicio web es el siguiente:
 ![Web log screenshot](./img/webServer.png)
@@ -15,10 +23,14 @@ El log de la terminal del servicio accounts es el siguiente:
 
 
 ### 2. The service registration service has these two services registered (a third terminal). **Eureka dashboard screenshot**.
-![Eureka screenshot](./img/tarea1.png)
+Cuando tenemos ambos servicios registrados, la página de Eureka resultante es la siguiente:
+![Eureka screenshot](./img/tarea2_prueba.png)
 
 ### 3. Update the configuration repository so that the `accounts` service uses now the port 3333. **Link to the commit**.
-https://github.com/ALalagunaa/lab6-microservices-config-repo/commit/020483676385ba98f2da3079e50c8abcce49ef4a
+Para que el servicio *accounts* use ahora el puerto 3333 simplemente tenemos que cambiar el *port* del fichero de configuración correspondiente.
+El commit en el cual se hace esto está en el siguiente link: https://github.com/ALalagunaa/lab6-microservices-config-repo/commit/020483676385ba98f2da3079e50c8abcce49ef4a
+
+*(hay más commits en los cuales se modifica este puerto pero ha sido por distintas pruebas/errores que he ido haciendo/teniendo al realizarlo)*
 
 ### 4. Run a second instance of the `accounts` service using the new configuration (a fourth terminals). What happens? **Explain and Eureka dashboard screenshot**
 Se demuestra como podemos lanzar un segundo service accounts en otro puerto sin tener que detener la configuración anterior
